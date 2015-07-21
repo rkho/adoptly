@@ -1,0 +1,6 @@
+#bower and npm packages
+/bower_components
+/node_modules
+
+#apple files
+.DS_Store

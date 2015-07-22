@@ -1,20 +1,10 @@
 {
   "name": "adoptly",
   "version": "0.0.0",
-  "homepage": "https://github.com/rkho/adoptly",
-  "authors": [
-    "Richard Kho <rkho@me.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "timer-jquery": "walmik/timer.jquery"
+  },
+  "devDependencies": {
+    "chai": "~3.2.0",
+    "mocha": "~2.2.5"
   }
 }

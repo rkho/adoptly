@@ -1,9 +1,9 @@
-#bower and npm packages
-/bower_components
-/node_modules
-
-#apple files
-.DS_Store
-
-#npm debug log
-npm-debug.log
+node_modules
+temp
+.tmp
+dist
+.sass-cache
+bower_components
+bower_components
+package
+.yo-rc.json

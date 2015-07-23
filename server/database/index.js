@@ -5,7 +5,7 @@ var data = [ {user: 'Richard', vendor: 'Slack', duration: 600}, {user: 'Pavan', 
 
 var collection = new PourOver.Collection(data);
 
-var user_filter = PourOver.makeExactFilter('user', ['Richard', 'Pavan', 'Arian', 'Koz']);
+var user_filter = PourOver.makeExactFilter('user', ['Richard', 'Pavan', 'Arian', 'John']);
 
 var vendor_filter = PourOver.makeExactFilter('vendor', ['Slack', 'Salesforce', 'Marketo']);
 

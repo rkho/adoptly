@@ -1,13 +1,13 @@
 var PourOver = require('pourover');
 
-var data = [ {user: 'Richard', vendor: 'Slack', duration: 600}, {user: 'Pavan', vendor: 'Slack', duration: 350}, {user: 'Arian', vendor: 'PDL', duration: 999}, {user: 'Koz', vendor: 'Fibonacci', duration: 50}, {user: 'Richard', vendor: 'RabbitMQ', duration: 400}, {user: 'Pavan', vendor: 'Fibonacci', duration: 300}]
+var data = [ {user: 'Richard', vendor: 'Slack', duration: 600}, {user: 'Pavan', vendor: 'Slack', duration: 350}, {user: 'Arian', vendor: 'Salesforce', duration: 999}, {user: 'John', vendor: 'Salesforce', duration: 50}, {user: 'Richard', vendor: 'Marketo', duration: 400}, {user: 'Pavan', vendor: 'Marketo', duration: 300}]
 
 
 var collection = new PourOver.Collection(data);
 
 var user_filter = PourOver.makeExactFilter('user', ['Richard', 'Pavan', 'Arian', 'Koz']);
 
-var vendor_filter = PourOver.makeExactFilter('vendor', ['Slack', 'PDL', 'Fibonacci', 'RabbitMQ']);
+var vendor_filter = PourOver.makeExactFilter('vendor', ['Slack', 'Salesforce', 'Marketo']);
 
 collection.addFilters([user_filter, vendor_filter]);
 

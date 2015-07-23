@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
+    "body-parser": "^1.13.2",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -23,9 +24,10 @@
     "time-grunt": "~0.3.1",
     "jshint-stylish": "~0.1.5",
     "grunt-chrome-manifest": "~0.2.0",
-    "grunt-contrib-compress": "~0.9.1"
+    "grunt-contrib-compress": "~0.9.1",
+    "morgan": "^1.6.1",
+    "pourover": "^1.2.0"
   },
-<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rkho/adoptly.git"
@@ -36,18 +38,7 @@
     "url": "https://github.com/rkho/adoptly/issues"
   },
   "homepage": "https://github.com/rkho/adoptly#readme",
-  "dependencies": {
-    "body-parser": "^1.13.2",
-    "gulp": "^3.9.0",
-    "gulp-bower": "0.0.10",
-    "gulp-concat": "^2.6.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-uglify": "^1.2.0",
-    "morgan": "^1.6.1",
-    "pourover": "^1.2.0"
-=======
   "engines": {
     "node": ">=0.8.0"
->>>>>>> 49e3ff1f1e758dfd10115958617444892ca4efe7
   }
 }

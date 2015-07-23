@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var router = require('./routes.js');
 
 var app = express();
 
@@ -18,3 +19,5 @@ app.listen(app.get('port'), function() {
 app.get('/', function(req, res) {
   res.send('Hello World!');
 })
+
+app.use('/api', router);

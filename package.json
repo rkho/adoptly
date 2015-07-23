@@ -1,8 +1,12 @@
 {
   "name": "adoptly",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "sequelize": "^3.4.1",
+    "underscore": "^1.8.3"
+  },
   "devDependencies": {
+    "body-parser": "^1.13.2",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -23,8 +27,20 @@
     "time-grunt": "~0.3.1",
     "jshint-stylish": "~0.1.5",
     "grunt-chrome-manifest": "~0.2.0",
-    "grunt-contrib-compress": "~0.9.1"
+    "grunt-contrib-compress": "~0.9.1",
+    "morgan": "^1.6.1",
+    "pourover": "https://github.com/adoptly/pourover"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkho/adoptly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkho/adoptly/issues"
+  },
+  "homepage": "https://github.com/rkho/adoptly#readme",
   "engines": {
     "node": ">=0.8.0"
   }

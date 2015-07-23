@@ -1,7 +1,10 @@
 {
   "name": "adoptly",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "sequelize": "^3.4.1",
+    "underscore": "^1.8.3"
+  },
   "devDependencies": {
     "body-parser": "^1.13.2",
     "grunt": "~0.4.1",
@@ -26,7 +29,7 @@
     "grunt-chrome-manifest": "~0.2.0",
     "grunt-contrib-compress": "~0.9.1",
     "morgan": "^1.6.1",
-    "pourover": "^1.2.0"
+    "pourover": "https://github.com/adoptly/pourover"
   },
   "repository": {
     "type": "git",

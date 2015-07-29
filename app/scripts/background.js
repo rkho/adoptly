@@ -9,47 +9,50 @@ chrome.browserAction.setBadgeText({text: '\'1'});
 
 // SESSION CLASS
 var Session = function(username, vendor) {
-  this.username = username,
-  this.vendor = vendor
-  this.duration = 0
+  this.username = username;
+  this.vendor = vendor;
+  this.duration = 0;
+  this.startDate = new Date();
+  this.endDate = undefined;
 }
 
-Session.prototype.startTimer() {
-  setInterval(function() {
-    this.duration++;
-  }, 1000)
+Session.prototype.getEndDate = function() {
+  this.endDate = new Date();
 }
 
-Session.prototype.sendToDatabase() {
+Session.prototype.sendToDatabase = function() {
   // AJAX POST request to send this to the database
 }
 
 var session;
 
 // TRACKED VENDORS
-var trackedVendors = ['slack.com']
+var trackedVendors = ['slack.com', 'apple.com']
 
 // HELPER METHODS
-function checkVendor(domain) {
-  if (trackedVendors.indexOf(domain) !== -1) {
+var checkVendor = function(domain) {
+  if (trackedVendors.indexOf(domain) !== -1 && !session) {
     session = new Session('Richard', domain);
-    session.startTimer();
+    // alert(session.startDate);
   }
 }
 
 // LISTENERS: Communication from contentscript.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // If the message is received, we need to grab the URL of the active tab
-  if (request.greeting) {
-    checkVendor();
+  if (request.domain) {
+    sendResponse({yes: 'ok'})
+    // alert(sender.tab.id);
+    checkVendor(request.domain);
   }
 })
 
 
-
-
 // LISTENERS: Tab Closed
-chrome.tabs.onRemoved.addListener(function() {
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  if (changeInfo.url) {
+    alert(changeInfo.url);
+  }
 })
 
 
@@ -63,8 +66,8 @@ chrome.tabs.onRemoved.addListener(function() {
 
 chrometabs.onActivated.addListener(function(activeInfo) {
   // Send a POST request to our server, pushing in sessionInfo
-  chrome.tabs.sendMessage(tabs[0].url, {query: 'New domain'}, function(response) {
-    checkVendor();
+  chrome.tabs.sendMessage(tabs[0].url, {query: 'new'}, function(response) {
+    checkVendor(response.domain);
   })
 })
 

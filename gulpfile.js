@@ -43,6 +43,9 @@ path.VEN_JS_MIN = 'vendor.min.js';
 
 gulp.task('build', ['app', 'ven']);
 
+gulp.task('ci', ['build']);
+
+
 gulp.task('app', function() {
   gulp.src(path.APP_JS_SRC)
     .pipe(plumber())
